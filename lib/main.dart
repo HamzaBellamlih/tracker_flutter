@@ -6,7 +6,16 @@ import 'core/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "TON_API_KEY",
+      authDomain: "TON_PROJECT.firebaseapp.com",
+      projectId: "TON_PROJECT_ID",
+      storageBucket: "TON_PROJECT.appspot.com",
+      messagingSenderId: "TON_SENDER_ID",
+      appId: "TON_APP_ID",
+    ),
+  );
   runApp(const ProviderScope(child: MyApp()));
 }
 
